@@ -438,7 +438,7 @@ export default function FinancialModel() {
     setCountryInsightsLoading(true);
     setCountryInsights(null);
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch(/api/ai, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -494,7 +494,7 @@ export default function FinancialModel() {
     setAssetData(null);
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -586,7 +586,7 @@ Use real current data from web search. All return values should be percentages (
         userContent = [{ type: "text", text: `Here is my financial document:\n\n${text}\n\n${UPLOAD_PROMPT}` }];
       }
 
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -676,7 +676,7 @@ Positive amounts for expenses, negative for income. Categorize conservatively: r
         userContent = [{ type: "text", text: `Here is my transaction data:\n\n${text}\n\n${actualsPrompt}` }];
       }
 
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
