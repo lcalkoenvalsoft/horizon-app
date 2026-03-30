@@ -196,7 +196,6 @@ export async function hydrateStore(userId: string) {
     netWorthHistory: (nwRes.data || []).map((n: Record<string, unknown>) => ({
       month: n.month as string, totalAssets: n.total_assets as number, totalLiabilities: n.total_liabilities as number,
       netWorth: n.net_worth as number, portfolioValue: n.portfolio_value as number,
-      netWorth: n.net_worth, portfolioValue: n.portfolio_value,
-    })),
+          })),
   });
 }
