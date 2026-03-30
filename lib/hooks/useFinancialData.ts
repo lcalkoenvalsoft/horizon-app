@@ -194,7 +194,8 @@ export async function hydrateStore(userId: string) {
     })) as Goal[],
     actuals,
     netWorthHistory: (nwRes.data || []).map((n: Record<string, unknown>) => ({
-      month: n.month, totalAssets: n.total_assets, totalLiabilities: n.total_liabilities,
+      month: n.month as string, totalAssets: n.total_assets as number, totalLiabilities: n.total_liabilities as number,
+      netWorth: n.net_worth as number, portfolioValue: n.portfolio_value as number,
       netWorth: n.net_worth, portfolioValue: n.portfolio_value,
     })),
   });
