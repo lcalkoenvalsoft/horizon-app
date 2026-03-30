@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env.production
+*.tsbuildinfo
+next-env.d.ts
+
+# Capacitor
+ios/
+android/
+capacitor/ios/
+capacitor/android/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store

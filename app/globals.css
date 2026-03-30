@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0C0F14;
+  --surface: #13171E;
+  --surface-raised: #1A1F28;
+  --surface-hover: #222833;
+  --border: #2A3040;
+  --border-focus: #5B8DEF;
+  --text-primary: #E8ECF4;
+  --text-secondary: #A0AAC0;
+  --text-muted: #5E6882;
+  --accent: #5B8DEF;
+  --accent-soft: rgba(91,141,239,0.12);
+  --green: #7CCA98;
+  --green-soft: rgba(124,202,152,0.12);
+  --red: #E8927C;
+  --red-soft: rgba(232,146,124,0.12);
+  --yellow: #F0C75E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe area insets for notched devices */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Input number arrows removal */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] { -moz-appearance: textfield; }
+
+/* Selection */
+::selection { background: var(--accent-soft); color: var(--text-primary); }
+
+/* Capacitor status bar spacer */
+.capacitor-status-bar {
+  height: env(safe-area-inset-top);
+  background: var(--bg);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
